@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2650DD1224DE15200230B6D /* LogToolHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DD0224DE15200230B6D /* LogToolHomeViewController.m */; };
+		B2650DD4224DE16400230B6D /* LogToolSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DD3224DE16400230B6D /* LogToolSearchViewController.m */; };
+		B2650DDB224E000B00230B6D /* toolLibs_icon_nav_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2650DD9224E000B00230B6D /* toolLibs_icon_nav_close@2x.png */; };
+		B2650DDC224E000B00230B6D /* toolLibs_icon_nav_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2650DDA224E000B00230B6D /* toolLibs_icon_nav_close@3x.png */; };
+		B2650DDF224E00AF00230B6D /* LogToolMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DDE224E00AF00230B6D /* LogToolMessageModel.m */; };
 		B29D5883224DBDA100D9EFB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5882224DBDA100D9EFB5 /* AppDelegate.m */; };
 		B29D5886224DBDA100D9EFB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5885224DBDA100D9EFB5 /* ViewController.m */; };
 		B29D5889224DBDA100D9EFB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29D5887224DBDA100D9EFB5 /* Main.storyboard */; };
@@ -36,9 +41,35 @@
 		B29D58DC224DBDBA00D9EFB5 /* NSDate+date.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58C3224DBDB900D9EFB5 /* NSDate+date.m */; };
 		B29D58DD224DBDBA00D9EFB5 /* LogStatisticalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58C6224DBDB900D9EFB5 /* LogStatisticalTableViewController.m */; };
 		B29D58DE224DBDBA00D9EFB5 /* LogStatisticalTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58C7224DBDB900D9EFB5 /* LogStatisticalTabBarViewController.m */; };
+		B29D58EC224DBE9E00D9EFB5 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58E2224DBE9E00D9EFB5 /* FMDatabaseQueue.m */; };
+		B29D58ED224DBE9E00D9EFB5 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58E5224DBE9E00D9EFB5 /* FMDatabaseAdditions.m */; };
+		B29D58EE224DBE9E00D9EFB5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58E6224DBE9E00D9EFB5 /* FMDatabase.m */; };
+		B29D58EF224DBE9E00D9EFB5 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58EA224DBE9E00D9EFB5 /* FMDatabasePool.m */; };
+		B29D58F0224DBE9E00D9EFB5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58EB224DBE9E00D9EFB5 /* FMResultSet.m */; };
+		B29D58FA224DC02300D9EFB5 /* LogToolTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58F9224DC02300D9EFB5 /* LogToolTabBarViewController.m */; };
+		B29D58FD224DC03500D9EFB5 /* LogToolNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D58FC224DC03500D9EFB5 /* LogToolNavViewController.m */; };
+		B29D5901224DC06100D9EFB5 /* LogToolTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5900224DC06100D9EFB5 /* LogToolTableViewController.m */; };
+		B29D590D224DC0F300D9EFB5 /* toolLibs_select_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5905224DC0F300D9EFB5 /* toolLibs_select_icon@3x.png */; };
+		B29D590E224DC0F300D9EFB5 /* toolLibs_other_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5906224DC0F300D9EFB5 /* toolLibs_other_icon@2x.png */; };
+		B29D590F224DC0F300D9EFB5 /* toolLibs_other_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5907224DC0F300D9EFB5 /* toolLibs_other_icon@3x.png */; };
+		B29D5910224DC0F300D9EFB5 /* toolLibs_select_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5908224DC0F300D9EFB5 /* toolLibs_select_icon@2x.png */; };
+		B29D5911224DC0F300D9EFB5 /* toolLibs_home_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5909224DC0F300D9EFB5 /* toolLibs_home_icon@2x.png */; };
+		B29D5912224DC0F300D9EFB5 /* toolLibs_seting_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D590A224DC0F300D9EFB5 /* toolLibs_seting_icon@3x.png */; };
+		B29D5913224DC0F300D9EFB5 /* toolLibs_seting_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D590B224DC0F300D9EFB5 /* toolLibs_seting_icon@2x.png */; };
+		B29D5914224DC0F300D9EFB5 /* toolLibs_home_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D590C224DC0F300D9EFB5 /* toolLibs_home_icon@3x.png */; };
+		B29D5917224DC17100D9EFB5 /* UIImage+LogTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5916224DC17100D9EFB5 /* UIImage+LogTool.m */; };
+		B29D591A224DC2C400D9EFB5 /* UIColor+LogTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5919224DC2C400D9EFB5 /* UIColor+LogTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2650DCF224DE15200230B6D /* LogToolHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolHomeViewController.h; sourceTree = "<group>"; };
+		B2650DD0224DE15200230B6D /* LogToolHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolHomeViewController.m; sourceTree = "<group>"; };
+		B2650DD2224DE16400230B6D /* LogToolSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolSearchViewController.h; sourceTree = "<group>"; };
+		B2650DD3224DE16400230B6D /* LogToolSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolSearchViewController.m; sourceTree = "<group>"; };
+		B2650DD9224E000B00230B6D /* toolLibs_icon_nav_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_icon_nav_close@2x.png"; sourceTree = "<group>"; };
+		B2650DDA224E000B00230B6D /* toolLibs_icon_nav_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_icon_nav_close@3x.png"; sourceTree = "<group>"; };
+		B2650DDD224E00AF00230B6D /* LogToolMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolMessageModel.h; sourceTree = "<group>"; };
+		B2650DDE224E00AF00230B6D /* LogToolMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolMessageModel.m; sourceTree = "<group>"; };
 		B29D587E224DBDA100D9EFB5 /* LogTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29D5881224DBDA100D9EFB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B29D5882224DBDA100D9EFB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,6 +119,36 @@
 		B29D58C5224DBDB900D9EFB5 /* UIView+VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VC.h"; sourceTree = "<group>"; };
 		B29D58C6224DBDB900D9EFB5 /* LogStatisticalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogStatisticalTableViewController.m; sourceTree = "<group>"; };
 		B29D58C7224DBDB900D9EFB5 /* LogStatisticalTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogStatisticalTabBarViewController.m; sourceTree = "<group>"; };
+		B29D58E1224DBE9E00D9EFB5 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		B29D58E2224DBE9E00D9EFB5 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		B29D58E3224DBE9E00D9EFB5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		B29D58E4224DBE9E00D9EFB5 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		B29D58E5224DBE9E00D9EFB5 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		B29D58E6224DBE9E00D9EFB5 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		B29D58E7224DBE9E00D9EFB5 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		B29D58E8224DBE9E00D9EFB5 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		B29D58E9224DBE9E00D9EFB5 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		B29D58EA224DBE9E00D9EFB5 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		B29D58EB224DBE9E00D9EFB5 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		B29D58F8224DC02300D9EFB5 /* LogToolTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolTabBarViewController.h; sourceTree = "<group>"; };
+		B29D58F9224DC02300D9EFB5 /* LogToolTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolTabBarViewController.m; sourceTree = "<group>"; };
+		B29D58FB224DC03500D9EFB5 /* LogToolNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolNavViewController.h; sourceTree = "<group>"; };
+		B29D58FC224DC03500D9EFB5 /* LogToolNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolNavViewController.m; sourceTree = "<group>"; };
+		B29D58FF224DC06100D9EFB5 /* LogToolTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolTableViewController.h; sourceTree = "<group>"; };
+		B29D5900224DC06100D9EFB5 /* LogToolTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolTableViewController.m; sourceTree = "<group>"; };
+		B29D5903224DC09100D9EFB5 /* LogToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolHeader.h; sourceTree = "<group>"; };
+		B29D5905224DC0F300D9EFB5 /* toolLibs_select_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_select_icon@3x.png"; sourceTree = "<group>"; };
+		B29D5906224DC0F300D9EFB5 /* toolLibs_other_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_other_icon@2x.png"; sourceTree = "<group>"; };
+		B29D5907224DC0F300D9EFB5 /* toolLibs_other_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_other_icon@3x.png"; sourceTree = "<group>"; };
+		B29D5908224DC0F300D9EFB5 /* toolLibs_select_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_select_icon@2x.png"; sourceTree = "<group>"; };
+		B29D5909224DC0F300D9EFB5 /* toolLibs_home_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_home_icon@2x.png"; sourceTree = "<group>"; };
+		B29D590A224DC0F300D9EFB5 /* toolLibs_seting_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_seting_icon@3x.png"; sourceTree = "<group>"; };
+		B29D590B224DC0F300D9EFB5 /* toolLibs_seting_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_seting_icon@2x.png"; sourceTree = "<group>"; };
+		B29D590C224DC0F300D9EFB5 /* toolLibs_home_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_home_icon@3x.png"; sourceTree = "<group>"; };
+		B29D5915224DC17100D9EFB5 /* UIImage+LogTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+LogTool.h"; sourceTree = "<group>"; };
+		B29D5916224DC17100D9EFB5 /* UIImage+LogTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LogTool.m"; sourceTree = "<group>"; };
+		B29D5918224DC2C400D9EFB5 /* UIColor+LogTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+LogTool.h"; sourceTree = "<group>"; };
+		B29D5919224DC2C400D9EFB5 /* UIColor+LogTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LogTool.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +162,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2650DCD224DE12300230B6D /* search */ = {
+			isa = PBXGroup;
+			children = (
+				B2650DD2224DE16400230B6D /* LogToolSearchViewController.h */,
+				B2650DD3224DE16400230B6D /* LogToolSearchViewController.m */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		B2650DCE224DE13500230B6D /* home */ = {
+			isa = PBXGroup;
+			children = (
+				B2650DCF224DE15200230B6D /* LogToolHomeViewController.h */,
+				B2650DD0224DE15200230B6D /* LogToolHomeViewController.m */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
 		B29D5875224DBDA100D9EFB5 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +199,7 @@
 		B29D5880224DBDA100D9EFB5 /* LogTool */ = {
 			isa = PBXGroup;
 			children = (
+				B29D58F1224DBF8300D9EFB5 /* LogTool */,
 				B29D5897224DBDB900D9EFB5 /* ClassFile */,
 				B29D5881224DBDA100D9EFB5 /* AppDelegate.h */,
 				B29D5882224DBDA100D9EFB5 /* AppDelegate.m */,
@@ -137,6 +217,7 @@
 		B29D5897224DBDB900D9EFB5 /* ClassFile */ = {
 			isa = PBXGroup;
 			children = (
+				B29D58DF224DBE9E00D9EFB5 /* Libs */,
 				B29D5898224DBDB900D9EFB5 /* Images */,
 				B29D589F224DBDB900D9EFB5 /* SQLiteManager */,
 				B29D58A4224DBDB900D9EFB5 /* LogMessage.m */,
@@ -252,6 +333,128 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		B29D58DF224DBE9E00D9EFB5 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				B29D58E0224DBE9E00D9EFB5 /* fmdb */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		B29D58E0224DBE9E00D9EFB5 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				B29D58E1224DBE9E00D9EFB5 /* FMDatabase.h */,
+				B29D58E2224DBE9E00D9EFB5 /* FMDatabaseQueue.m */,
+				B29D58E3224DBE9E00D9EFB5 /* FMResultSet.h */,
+				B29D58E4224DBE9E00D9EFB5 /* FMDatabasePool.h */,
+				B29D58E5224DBE9E00D9EFB5 /* FMDatabaseAdditions.m */,
+				B29D58E6224DBE9E00D9EFB5 /* FMDatabase.m */,
+				B29D58E7224DBE9E00D9EFB5 /* FMDatabaseQueue.h */,
+				B29D58E8224DBE9E00D9EFB5 /* FMDB.h */,
+				B29D58E9224DBE9E00D9EFB5 /* FMDatabaseAdditions.h */,
+				B29D58EA224DBE9E00D9EFB5 /* FMDatabasePool.m */,
+				B29D58EB224DBE9E00D9EFB5 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		B29D58F1224DBF8300D9EFB5 /* LogTool */ = {
+			isa = PBXGroup;
+			children = (
+				B29D58F5224DBFCC00D9EFB5 /* category */,
+				B29D58F4224DBFB500D9EFB5 /* resources */,
+				B2650DD9224E000B00230B6D /* toolLibs_icon_nav_close@2x.png */,
+				B2650DDA224E000B00230B6D /* toolLibs_icon_nav_close@3x.png */,
+				B29D58F3224DBF9F00D9EFB5 /* DataBase */,
+				B29D58F2224DBF8E00D9EFB5 /* UIKit */,
+				B29D5903224DC09100D9EFB5 /* LogToolHeader.h */,
+			);
+			path = LogTool;
+			sourceTree = "<group>";
+		};
+		B29D58F2224DBF8E00D9EFB5 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B2650DCE224DE13500230B6D /* home */,
+				B2650DCD224DE12300230B6D /* search */,
+				B29D58FE224DC03C00D9EFB5 /* rootController */,
+				B29D58F7224DBFFB00D9EFB5 /* navigationController */,
+				B29D58F6224DBFEB00D9EFB5 /* tabbar */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B29D58F3224DBF9F00D9EFB5 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				B2650DDD224E00AF00230B6D /* LogToolMessageModel.h */,
+				B2650DDE224E00AF00230B6D /* LogToolMessageModel.m */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		B29D58F4224DBFB500D9EFB5 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				B29D5904224DC0F300D9EFB5 /* images */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		B29D58F5224DBFCC00D9EFB5 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				B29D5915224DC17100D9EFB5 /* UIImage+LogTool.h */,
+				B29D5916224DC17100D9EFB5 /* UIImage+LogTool.m */,
+				B29D5918224DC2C400D9EFB5 /* UIColor+LogTool.h */,
+				B29D5919224DC2C400D9EFB5 /* UIColor+LogTool.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		B29D58F6224DBFEB00D9EFB5 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				B29D58F8224DC02300D9EFB5 /* LogToolTabBarViewController.h */,
+				B29D58F9224DC02300D9EFB5 /* LogToolTabBarViewController.m */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		B29D58F7224DBFFB00D9EFB5 /* navigationController */ = {
+			isa = PBXGroup;
+			children = (
+				B29D58FB224DC03500D9EFB5 /* LogToolNavViewController.h */,
+				B29D58FC224DC03500D9EFB5 /* LogToolNavViewController.m */,
+			);
+			path = navigationController;
+			sourceTree = "<group>";
+		};
+		B29D58FE224DC03C00D9EFB5 /* rootController */ = {
+			isa = PBXGroup;
+			children = (
+				B29D58FF224DC06100D9EFB5 /* LogToolTableViewController.h */,
+				B29D5900224DC06100D9EFB5 /* LogToolTableViewController.m */,
+			);
+			path = rootController;
+			sourceTree = "<group>";
+		};
+		B29D5904224DC0F300D9EFB5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B29D5905224DC0F300D9EFB5 /* toolLibs_select_icon@3x.png */,
+				B29D5906224DC0F300D9EFB5 /* toolLibs_other_icon@2x.png */,
+				B29D5907224DC0F300D9EFB5 /* toolLibs_other_icon@3x.png */,
+				B29D5908224DC0F300D9EFB5 /* toolLibs_select_icon@2x.png */,
+				B29D5909224DC0F300D9EFB5 /* toolLibs_home_icon@2x.png */,
+				B29D590A224DC0F300D9EFB5 /* toolLibs_seting_icon@3x.png */,
+				B29D590B224DC0F300D9EFB5 /* toolLibs_seting_icon@2x.png */,
+				B29D590C224DC0F300D9EFB5 /* toolLibs_home_icon@3x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,12 +512,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29D590F224DC0F300D9EFB5 /* toolLibs_other_icon@3x.png in Resources */,
 				B29D588E224DBDA300D9EFB5 /* LaunchScreen.storyboard in Resources */,
+				B29D5912224DC0F300D9EFB5 /* toolLibs_seting_icon@3x.png in Resources */,
 				B29D58CC224DBDBA00D9EFB5 /* _log_seting@2x.png in Resources */,
 				B29D58CA224DBDBA00D9EFB5 /* _log_seacrh@2x.png in Resources */,
+				B2650DDB224E000B00230B6D /* toolLibs_icon_nav_close@2x.png in Resources */,
 				B29D58DB224DBDBA00D9EFB5 /* LogStatistical.storyboard in Resources */,
+				B29D5910224DC0F300D9EFB5 /* toolLibs_select_icon@2x.png in Resources */,
+				B29D5911224DC0F300D9EFB5 /* toolLibs_home_icon@2x.png in Resources */,
+				B2650DDC224E000B00230B6D /* toolLibs_icon_nav_close@3x.png in Resources */,
+				B29D590E224DC0F300D9EFB5 /* toolLibs_other_icon@2x.png in Resources */,
+				B29D5914224DC0F300D9EFB5 /* toolLibs_home_icon@3x.png in Resources */,
 				B29D588B224DBDA300D9EFB5 /* Assets.xcassets in Resources */,
 				B29D58C9224DBDBA00D9EFB5 /* _log_seting_sele@2x.png in Resources */,
+				B29D5913224DC0F300D9EFB5 /* toolLibs_seting_icon@2x.png in Resources */,
+				B29D590D224DC0F300D9EFB5 /* toolLibs_select_icon@3x.png in Resources */,
 				B29D58CD224DBDBA00D9EFB5 /* _log_home@2x.png in Resources */,
 				B29D58CB224DBDBA00D9EFB5 /* _log_seacrh_sele@2x.png in Resources */,
 				B29D5889224DBDA100D9EFB5 /* Main.storyboard in Resources */,
@@ -332,19 +545,32 @@
 				B29D5886224DBDA100D9EFB5 /* ViewController.m in Sources */,
 				B29D58D5224DBDBA00D9EFB5 /* RecentsTableViewController.m in Sources */,
 				B29D58D1224DBDBA00D9EFB5 /* ContactsTableViewController.m in Sources */,
+				B29D58EF224DBE9E00D9EFB5 /* FMDatabasePool.m in Sources */,
+				B2650DD4224DE16400230B6D /* LogToolSearchViewController.m in Sources */,
+				B2650DD1224DE15200230B6D /* LogToolHomeViewController.m in Sources */,
+				B2650DDF224E00AF00230B6D /* LogToolMessageModel.m in Sources */,
 				B29D58DE224DBDBA00D9EFB5 /* LogStatisticalTabBarViewController.m in Sources */,
 				B29D58DA224DBDBA00D9EFB5 /* UIView+VC.m in Sources */,
+				B29D58F0224DBE9E00D9EFB5 /* FMResultSet.m in Sources */,
+				B29D58FD224DC03500D9EFB5 /* LogToolNavViewController.m in Sources */,
+				B29D58FA224DC02300D9EFB5 /* LogToolTabBarViewController.m in Sources */,
+				B29D58ED224DBE9E00D9EFB5 /* FMDatabaseAdditions.m in Sources */,
+				B29D58EC224DBE9E00D9EFB5 /* FMDatabaseQueue.m in Sources */,
 				B29D58CF224DBDBA00D9EFB5 /* SQLiteModel.m in Sources */,
 				B29D58D8224DBDBA00D9EFB5 /* LogStatistical.m in Sources */,
+				B29D58EE224DBE9E00D9EFB5 /* FMDatabase.m in Sources */,
 				B29D58DD224DBDBA00D9EFB5 /* LogStatisticalTableViewController.m in Sources */,
 				B29D58D3224DBDBA00D9EFB5 /* DetailTableViewController.m in Sources */,
 				B29D58D4224DBDBA00D9EFB5 /* HistoryTableViewController.m in Sources */,
 				B29D58D7224DBDBA00D9EFB5 /* SearchDetailTableViewController.m in Sources */,
+				B29D591A224DC2C400D9EFB5 /* UIColor+LogTool.m in Sources */,
 				B29D58D9224DBDBA00D9EFB5 /* LogStatisticalListModel.m in Sources */,
 				B29D58D2224DBDBA00D9EFB5 /* SearchTableViewController.m in Sources */,
+				B29D5917224DC17100D9EFB5 /* UIImage+LogTool.m in Sources */,
 				B29D58DC224DBDBA00D9EFB5 /* NSDate+date.m in Sources */,
 				B29D58D0224DBDBA00D9EFB5 /* LogMessage.m in Sources */,
 				B29D58D6224DBDBA00D9EFB5 /* DisplayTableViewController.m in Sources */,
+				B29D5901224DC06100D9EFB5 /* LogToolTableViewController.m in Sources */,
 				B29D58CE224DBDBA00D9EFB5 /* SQLiteToolManager.m in Sources */,
 				B29D5891224DBDA300D9EFB5 /* main.m in Sources */,
 				B29D5883224DBDA100D9EFB5 /* AppDelegate.m in Sources */,

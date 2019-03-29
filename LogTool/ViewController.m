@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "LogStatisticalTabBarViewController.h"
+#import "LogToolTabBarViewController.h"
 @interface ViewController ()
 
 @end
@@ -17,7 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
+
+- (IBAction)newBtnAction:(id)sender {
+    [self presentViewController:[LogToolTabBarViewController new] animated:YES completion:nil];
+}
+- (IBAction)oldBtnAction:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LogStatistical" bundle:nil];
+    LogStatisticalTabBarViewController *tabbarVC = [sb instantiateViewControllerWithIdentifier:@"LogStatisticalTabBarViewControllerID"];
+    [self presentViewController:tabbarVC animated:YES completion:nil];
+}
+
+
+
+
+
+
 
 
 @end
