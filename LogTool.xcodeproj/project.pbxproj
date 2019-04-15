@@ -8,10 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B2650DD1224DE15200230B6D /* LogToolHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DD0224DE15200230B6D /* LogToolHomeViewController.m */; };
-		B2650DD4224DE16400230B6D /* LogToolSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DD3224DE16400230B6D /* LogToolSearchViewController.m */; };
 		B2650DDB224E000B00230B6D /* toolLibs_icon_nav_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2650DD9224E000B00230B6D /* toolLibs_icon_nav_close@2x.png */; };
 		B2650DDC224E000B00230B6D /* toolLibs_icon_nav_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2650DDA224E000B00230B6D /* toolLibs_icon_nav_close@3x.png */; };
 		B2650DDF224E00AF00230B6D /* LogToolMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DDE224E00AF00230B6D /* LogToolMessageModel.m */; };
+		B2650DE2224E042000230B6D /* LogToolSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DE1224E042000230B6D /* LogToolSQLiteManager.m */; };
+		B2650DE5224E07C400230B6D /* LogToolPrintMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DE4224E07C400230B6D /* LogToolPrintMsgModel.m */; };
+		B2650DE8224E082600230B6D /* NSDate+LogTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DE7224E082600230B6D /* NSDate+LogTool.m */; };
+		B2650DEC224EFD0B00230B6D /* LogToolScreeningTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DEB224EFD0B00230B6D /* LogToolScreeningTableViewController.m */; };
+		B2650DF0224F03A000230B6D /* LogToolFileNamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DEF224F03A000230B6D /* LogToolFileNamesTableViewController.m */; };
+		B2650DF3224F051A00230B6D /* LogToolFileNameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DF2224F051A00230B6D /* LogToolFileNameDetailViewController.m */; };
+		B2650DF6224F0C0E00230B6D /* LogToolExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DF5224F0C0E00230B6D /* LogToolExceptionHandler.m */; };
+		B2650DF9224F11A400230B6D /* toolLibs_icon_nav_detele@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2650DF7224F11A400230B6D /* toolLibs_icon_nav_detele@2x.png */; };
+		B2650DFA224F11A400230B6D /* toolLibs_icon_nav_detele@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2650DF8224F11A400230B6D /* toolLibs_icon_nav_detele@3x.png */; };
+		B2650DFF224F16BC00230B6D /* LogToolOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650DFE224F16BC00230B6D /* LogToolOtherViewController.m */; };
+		B2650E03224F176100230B6D /* LogToolRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650E02224F176100230B6D /* LogToolRuntimeViewController.m */; };
+		B2650E07224F1CEF00230B6D /* LogToolObjectMethodsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650E06224F1CEF00230B6D /* LogToolObjectMethodsListVC.m */; };
+		B2650E0A224F1DF800230B6D /* NSObject+LogToolRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650E09224F1DF800230B6D /* NSObject+LogToolRuntime.m */; };
+		B2650E0E224F2FB200230B6D /* LogToolDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650E0D224F2FB200230B6D /* LogToolDetailTableViewController.m */; };
+		B2650E11224F39ED00230B6D /* LogToolStatistical.m in Sources */ = {isa = PBXBuildFile; fileRef = B2650E10224F39ED00230B6D /* LogToolStatistical.m */; };
 		B29D5883224DBDA100D9EFB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5882224DBDA100D9EFB5 /* AppDelegate.m */; };
 		B29D5886224DBDA100D9EFB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5885224DBDA100D9EFB5 /* ViewController.m */; };
 		B29D5889224DBDA100D9EFB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29D5887224DBDA100D9EFB5 /* Main.storyboard */; };
@@ -64,12 +78,38 @@
 /* Begin PBXFileReference section */
 		B2650DCF224DE15200230B6D /* LogToolHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolHomeViewController.h; sourceTree = "<group>"; };
 		B2650DD0224DE15200230B6D /* LogToolHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolHomeViewController.m; sourceTree = "<group>"; };
-		B2650DD2224DE16400230B6D /* LogToolSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolSearchViewController.h; sourceTree = "<group>"; };
-		B2650DD3224DE16400230B6D /* LogToolSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolSearchViewController.m; sourceTree = "<group>"; };
 		B2650DD9224E000B00230B6D /* toolLibs_icon_nav_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_icon_nav_close@2x.png"; sourceTree = "<group>"; };
 		B2650DDA224E000B00230B6D /* toolLibs_icon_nav_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_icon_nav_close@3x.png"; sourceTree = "<group>"; };
 		B2650DDD224E00AF00230B6D /* LogToolMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolMessageModel.h; sourceTree = "<group>"; };
 		B2650DDE224E00AF00230B6D /* LogToolMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolMessageModel.m; sourceTree = "<group>"; };
+		B2650DE0224E042000230B6D /* LogToolSQLiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolSQLiteManager.h; sourceTree = "<group>"; };
+		B2650DE1224E042000230B6D /* LogToolSQLiteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolSQLiteManager.m; sourceTree = "<group>"; };
+		B2650DE3224E07C400230B6D /* LogToolPrintMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolPrintMsgModel.h; sourceTree = "<group>"; };
+		B2650DE4224E07C400230B6D /* LogToolPrintMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolPrintMsgModel.m; sourceTree = "<group>"; };
+		B2650DE6224E082600230B6D /* NSDate+LogTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+LogTool.h"; sourceTree = "<group>"; };
+		B2650DE7224E082600230B6D /* NSDate+LogTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LogTool.m"; sourceTree = "<group>"; };
+		B2650DEA224EFD0B00230B6D /* LogToolScreeningTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolScreeningTableViewController.h; sourceTree = "<group>"; };
+		B2650DEB224EFD0B00230B6D /* LogToolScreeningTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolScreeningTableViewController.m; sourceTree = "<group>"; };
+		B2650DEE224F03A000230B6D /* LogToolFileNamesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolFileNamesTableViewController.h; sourceTree = "<group>"; };
+		B2650DEF224F03A000230B6D /* LogToolFileNamesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolFileNamesTableViewController.m; sourceTree = "<group>"; };
+		B2650DF1224F051A00230B6D /* LogToolFileNameDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolFileNameDetailViewController.h; sourceTree = "<group>"; };
+		B2650DF2224F051A00230B6D /* LogToolFileNameDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolFileNameDetailViewController.m; sourceTree = "<group>"; };
+		B2650DF4224F0C0E00230B6D /* LogToolExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolExceptionHandler.h; sourceTree = "<group>"; };
+		B2650DF5224F0C0E00230B6D /* LogToolExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolExceptionHandler.m; sourceTree = "<group>"; };
+		B2650DF7224F11A400230B6D /* toolLibs_icon_nav_detele@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_icon_nav_detele@2x.png"; sourceTree = "<group>"; };
+		B2650DF8224F11A400230B6D /* toolLibs_icon_nav_detele@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolLibs_icon_nav_detele@3x.png"; sourceTree = "<group>"; };
+		B2650DFD224F16BC00230B6D /* LogToolOtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolOtherViewController.h; sourceTree = "<group>"; };
+		B2650DFE224F16BC00230B6D /* LogToolOtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolOtherViewController.m; sourceTree = "<group>"; };
+		B2650E01224F176100230B6D /* LogToolRuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolRuntimeViewController.h; sourceTree = "<group>"; };
+		B2650E02224F176100230B6D /* LogToolRuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolRuntimeViewController.m; sourceTree = "<group>"; };
+		B2650E05224F1CEF00230B6D /* LogToolObjectMethodsListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolObjectMethodsListVC.h; sourceTree = "<group>"; };
+		B2650E06224F1CEF00230B6D /* LogToolObjectMethodsListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolObjectMethodsListVC.m; sourceTree = "<group>"; };
+		B2650E08224F1DF800230B6D /* NSObject+LogToolRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LogToolRuntime.h"; sourceTree = "<group>"; };
+		B2650E09224F1DF800230B6D /* NSObject+LogToolRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LogToolRuntime.m"; sourceTree = "<group>"; };
+		B2650E0C224F2FB200230B6D /* LogToolDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolDetailTableViewController.h; sourceTree = "<group>"; };
+		B2650E0D224F2FB200230B6D /* LogToolDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolDetailTableViewController.m; sourceTree = "<group>"; };
+		B2650E0F224F39ED00230B6D /* LogToolStatistical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogToolStatistical.h; sourceTree = "<group>"; };
+		B2650E10224F39ED00230B6D /* LogToolStatistical.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogToolStatistical.m; sourceTree = "<group>"; };
 		B29D587E224DBDA100D9EFB5 /* LogTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29D5881224DBDA100D9EFB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B29D5882224DBDA100D9EFB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -162,22 +202,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B2650DCD224DE12300230B6D /* search */ = {
-			isa = PBXGroup;
-			children = (
-				B2650DD2224DE16400230B6D /* LogToolSearchViewController.h */,
-				B2650DD3224DE16400230B6D /* LogToolSearchViewController.m */,
-			);
-			path = search;
-			sourceTree = "<group>";
-		};
 		B2650DCE224DE13500230B6D /* home */ = {
 			isa = PBXGroup;
 			children = (
+				B2650E0B224F2FA100230B6D /* detail */,
 				B2650DCF224DE15200230B6D /* LogToolHomeViewController.h */,
 				B2650DD0224DE15200230B6D /* LogToolHomeViewController.m */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		B2650DE9224EFCE100230B6D /* screening */ = {
+			isa = PBXGroup;
+			children = (
+				B2650DEA224EFD0B00230B6D /* LogToolScreeningTableViewController.h */,
+				B2650DEB224EFD0B00230B6D /* LogToolScreeningTableViewController.m */,
+			);
+			path = screening;
+			sourceTree = "<group>";
+		};
+		B2650DED224F037E00230B6D /* FileNames */ = {
+			isa = PBXGroup;
+			children = (
+				B2650DEE224F03A000230B6D /* LogToolFileNamesTableViewController.h */,
+				B2650DEF224F03A000230B6D /* LogToolFileNamesTableViewController.m */,
+				B2650DF1224F051A00230B6D /* LogToolFileNameDetailViewController.h */,
+				B2650DF2224F051A00230B6D /* LogToolFileNameDetailViewController.m */,
+			);
+			path = FileNames;
+			sourceTree = "<group>";
+		};
+		B2650DFC224F16A300230B6D /* other */ = {
+			isa = PBXGroup;
+			children = (
+				B2650E04224F1CD300230B6D /* methods */,
+				B2650E00224F170F00230B6D /* runtime */,
+				B2650DFD224F16BC00230B6D /* LogToolOtherViewController.h */,
+				B2650DFE224F16BC00230B6D /* LogToolOtherViewController.m */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		B2650E00224F170F00230B6D /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				B2650E01224F176100230B6D /* LogToolRuntimeViewController.h */,
+				B2650E02224F176100230B6D /* LogToolRuntimeViewController.m */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
+		B2650E04224F1CD300230B6D /* methods */ = {
+			isa = PBXGroup;
+			children = (
+				B2650E05224F1CEF00230B6D /* LogToolObjectMethodsListVC.h */,
+				B2650E06224F1CEF00230B6D /* LogToolObjectMethodsListVC.m */,
+			);
+			path = methods;
+			sourceTree = "<group>";
+		};
+		B2650E0B224F2FA100230B6D /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				B2650E0C224F2FB200230B6D /* LogToolDetailTableViewController.h */,
+				B2650E0D224F2FB200230B6D /* LogToolDetailTableViewController.m */,
+			);
+			path = detail;
 			sourceTree = "<group>";
 		};
 		B29D5875224DBDA100D9EFB5 = {
@@ -364,8 +454,6 @@
 			children = (
 				B29D58F5224DBFCC00D9EFB5 /* category */,
 				B29D58F4224DBFB500D9EFB5 /* resources */,
-				B2650DD9224E000B00230B6D /* toolLibs_icon_nav_close@2x.png */,
-				B2650DDA224E000B00230B6D /* toolLibs_icon_nav_close@3x.png */,
 				B29D58F3224DBF9F00D9EFB5 /* DataBase */,
 				B29D58F2224DBF8E00D9EFB5 /* UIKit */,
 				B29D5903224DC09100D9EFB5 /* LogToolHeader.h */,
@@ -376,8 +464,10 @@
 		B29D58F2224DBF8E00D9EFB5 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				B2650DFC224F16A300230B6D /* other */,
+				B2650DED224F037E00230B6D /* FileNames */,
+				B2650DE9224EFCE100230B6D /* screening */,
 				B2650DCE224DE13500230B6D /* home */,
-				B2650DCD224DE12300230B6D /* search */,
 				B29D58FE224DC03C00D9EFB5 /* rootController */,
 				B29D58F7224DBFFB00D9EFB5 /* navigationController */,
 				B29D58F6224DBFEB00D9EFB5 /* tabbar */,
@@ -390,6 +480,14 @@
 			children = (
 				B2650DDD224E00AF00230B6D /* LogToolMessageModel.h */,
 				B2650DDE224E00AF00230B6D /* LogToolMessageModel.m */,
+				B2650DE0224E042000230B6D /* LogToolSQLiteManager.h */,
+				B2650DE1224E042000230B6D /* LogToolSQLiteManager.m */,
+				B2650DE3224E07C400230B6D /* LogToolPrintMsgModel.h */,
+				B2650DE4224E07C400230B6D /* LogToolPrintMsgModel.m */,
+				B2650DF4224F0C0E00230B6D /* LogToolExceptionHandler.h */,
+				B2650DF5224F0C0E00230B6D /* LogToolExceptionHandler.m */,
+				B2650E0F224F39ED00230B6D /* LogToolStatistical.h */,
+				B2650E10224F39ED00230B6D /* LogToolStatistical.m */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -409,6 +507,10 @@
 				B29D5916224DC17100D9EFB5 /* UIImage+LogTool.m */,
 				B29D5918224DC2C400D9EFB5 /* UIColor+LogTool.h */,
 				B29D5919224DC2C400D9EFB5 /* UIColor+LogTool.m */,
+				B2650DE6224E082600230B6D /* NSDate+LogTool.h */,
+				B2650DE7224E082600230B6D /* NSDate+LogTool.m */,
+				B2650E08224F1DF800230B6D /* NSObject+LogToolRuntime.h */,
+				B2650E09224F1DF800230B6D /* NSObject+LogToolRuntime.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -443,6 +545,10 @@
 		B29D5904224DC0F300D9EFB5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B2650DF7224F11A400230B6D /* toolLibs_icon_nav_detele@2x.png */,
+				B2650DF8224F11A400230B6D /* toolLibs_icon_nav_detele@3x.png */,
+				B2650DDA224E000B00230B6D /* toolLibs_icon_nav_close@3x.png */,
+				B2650DD9224E000B00230B6D /* toolLibs_icon_nav_close@2x.png */,
 				B29D5905224DC0F300D9EFB5 /* toolLibs_select_icon@3x.png */,
 				B29D5906224DC0F300D9EFB5 /* toolLibs_other_icon@2x.png */,
 				B29D5907224DC0F300D9EFB5 /* toolLibs_other_icon@3x.png */,
@@ -481,6 +587,7 @@
 		B29D5876224DBDA100D9EFB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LogTool;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = DingYD;
 				TargetAttributes = {
@@ -521,7 +628,9 @@
 				B29D58DB224DBDBA00D9EFB5 /* LogStatistical.storyboard in Resources */,
 				B29D5910224DC0F300D9EFB5 /* toolLibs_select_icon@2x.png in Resources */,
 				B29D5911224DC0F300D9EFB5 /* toolLibs_home_icon@2x.png in Resources */,
+				B2650DFA224F11A400230B6D /* toolLibs_icon_nav_detele@3x.png in Resources */,
 				B2650DDC224E000B00230B6D /* toolLibs_icon_nav_close@3x.png in Resources */,
+				B2650DF9224F11A400230B6D /* toolLibs_icon_nav_detele@2x.png in Resources */,
 				B29D590E224DC0F300D9EFB5 /* toolLibs_other_icon@2x.png in Resources */,
 				B29D5914224DC0F300D9EFB5 /* toolLibs_home_icon@3x.png in Resources */,
 				B29D588B224DBDA300D9EFB5 /* Assets.xcassets in Resources */,
@@ -543,10 +652,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29D5886224DBDA100D9EFB5 /* ViewController.m in Sources */,
+				B2650DF6224F0C0E00230B6D /* LogToolExceptionHandler.m in Sources */,
 				B29D58D5224DBDBA00D9EFB5 /* RecentsTableViewController.m in Sources */,
+				B2650DE2224E042000230B6D /* LogToolSQLiteManager.m in Sources */,
 				B29D58D1224DBDBA00D9EFB5 /* ContactsTableViewController.m in Sources */,
+				B2650DF3224F051A00230B6D /* LogToolFileNameDetailViewController.m in Sources */,
 				B29D58EF224DBE9E00D9EFB5 /* FMDatabasePool.m in Sources */,
-				B2650DD4224DE16400230B6D /* LogToolSearchViewController.m in Sources */,
 				B2650DD1224DE15200230B6D /* LogToolHomeViewController.m in Sources */,
 				B2650DDF224E00AF00230B6D /* LogToolMessageModel.m in Sources */,
 				B29D58DE224DBDBA00D9EFB5 /* LogStatisticalTabBarViewController.m in Sources */,
@@ -554,11 +665,13 @@
 				B29D58F0224DBE9E00D9EFB5 /* FMResultSet.m in Sources */,
 				B29D58FD224DC03500D9EFB5 /* LogToolNavViewController.m in Sources */,
 				B29D58FA224DC02300D9EFB5 /* LogToolTabBarViewController.m in Sources */,
+				B2650DFF224F16BC00230B6D /* LogToolOtherViewController.m in Sources */,
 				B29D58ED224DBE9E00D9EFB5 /* FMDatabaseAdditions.m in Sources */,
 				B29D58EC224DBE9E00D9EFB5 /* FMDatabaseQueue.m in Sources */,
 				B29D58CF224DBDBA00D9EFB5 /* SQLiteModel.m in Sources */,
 				B29D58D8224DBDBA00D9EFB5 /* LogStatistical.m in Sources */,
 				B29D58EE224DBE9E00D9EFB5 /* FMDatabase.m in Sources */,
+				B2650E11224F39ED00230B6D /* LogToolStatistical.m in Sources */,
 				B29D58DD224DBDBA00D9EFB5 /* LogStatisticalTableViewController.m in Sources */,
 				B29D58D3224DBDBA00D9EFB5 /* DetailTableViewController.m in Sources */,
 				B29D58D4224DBDBA00D9EFB5 /* HistoryTableViewController.m in Sources */,
@@ -566,14 +679,22 @@
 				B29D591A224DC2C400D9EFB5 /* UIColor+LogTool.m in Sources */,
 				B29D58D9224DBDBA00D9EFB5 /* LogStatisticalListModel.m in Sources */,
 				B29D58D2224DBDBA00D9EFB5 /* SearchTableViewController.m in Sources */,
+				B2650E0A224F1DF800230B6D /* NSObject+LogToolRuntime.m in Sources */,
 				B29D5917224DC17100D9EFB5 /* UIImage+LogTool.m in Sources */,
+				B2650E03224F176100230B6D /* LogToolRuntimeViewController.m in Sources */,
+				B2650E0E224F2FB200230B6D /* LogToolDetailTableViewController.m in Sources */,
 				B29D58DC224DBDBA00D9EFB5 /* NSDate+date.m in Sources */,
+				B2650E07224F1CEF00230B6D /* LogToolObjectMethodsListVC.m in Sources */,
+				B2650DEC224EFD0B00230B6D /* LogToolScreeningTableViewController.m in Sources */,
 				B29D58D0224DBDBA00D9EFB5 /* LogMessage.m in Sources */,
+				B2650DE5224E07C400230B6D /* LogToolPrintMsgModel.m in Sources */,
 				B29D58D6224DBDBA00D9EFB5 /* DisplayTableViewController.m in Sources */,
 				B29D5901224DC06100D9EFB5 /* LogToolTableViewController.m in Sources */,
 				B29D58CE224DBDBA00D9EFB5 /* SQLiteToolManager.m in Sources */,
 				B29D5891224DBDA300D9EFB5 /* main.m in Sources */,
 				B29D5883224DBDA100D9EFB5 /* AppDelegate.m in Sources */,
+				B2650DE8224E082600230B6D /* NSDate+LogTool.m in Sources */,
+				B2650DF0224F03A000230B6D /* LogToolFileNamesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

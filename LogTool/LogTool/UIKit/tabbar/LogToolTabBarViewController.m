@@ -11,6 +11,9 @@
 #import "LogToolHeader.h"
 #import "LogToolNavViewController.h"
 #import "LogToolHomeViewController.h"
+#import "LogToolScreeningTableViewController.h"
+#import "LogToolOtherViewController.h"
+#import "LogToolStatistical.h"
 @interface LogToolTabBarViewController ()
 
 @end
@@ -30,22 +33,29 @@
     
 
     LogToolHomeViewController *homeViewController = [[LogToolHomeViewController alloc]init];
+    homeViewController.type = -1;
     [self addchildControllersWithViewController:homeViewController Title:@"首页" image:@"toolLibs_home_icon@2x" ];
     
-    // 分类
-    LogToolTableViewController *serviceViewController = [[LogToolTableViewController alloc]init];
+
+    LogToolScreeningTableViewController *serviceViewController = [[LogToolScreeningTableViewController alloc]init];
     [self addchildControllersWithViewController:serviceViewController Title:@"筛选" image:@"toolLibs_select_icon@2x" ];
     
     
-    // 购物
-    LogToolTableViewController *forumViewController = [[LogToolTableViewController alloc]init];
-    [self addchildControllersWithViewController:forumViewController Title:@"设置" image:@"toolLibs_seting_icon@2x" ];
-    
-    // 我
-    LogToolTableViewController *meViewController = [[LogToolTableViewController alloc] init];
-    [self addchildControllersWithViewController:meViewController Title:@"其他" image:@"toolLibs_other_icon@2x"];
 
+//    LogToolTableViewController *forumViewController = [[LogToolTableViewController alloc]init];
+//    [self addchildControllersWithViewController:forumViewController Title:@"设置" image:@"toolLibs_seting_icon@2x" ];
+    
+
+    LogToolOtherViewController *meViewController = [[LogToolOtherViewController alloc] init];
+    [self addchildControllersWithViewController:meViewController Title:@"其他" image:@"toolLibs_other_icon@2x"];
+    [[LogToolStatistical shareInstance]hiddenButton];
 }
+
+
+- (void)dealloc {
+    [[LogToolStatistical shareInstance]showButton];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

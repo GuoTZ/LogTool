@@ -1,29 +1,26 @@
 //
-//  LogStatistical.m
-//  LogStatistical
+//  LogToolStatistical.m
+//  LogTool
 //
-//  Created by RM on 2018/6/23.
-//  Copyright © 2018年 GTZ. All rights reserved.
+//  Created by DingYD on 2019/3/30.
+//  Copyright © 2019 DingYD. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "LogStatistical.h"
-#import "LogStatisticalTabBarViewController.h"
-/*
- *
- *
- * */
-@interface LogStatistical()<UIGestureRecognizerDelegate>
+#import "LogToolTabBarViewController.h"
+#import "LogToolStatistical.h"
+#import "LogToolHeader.h"
+@interface LogToolStatistical()<UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) UIButton *button;
 
 @end
-@implementation LogStatistical
-static LogStatistical* _instance = nil;
+@implementation LogToolStatistical
+static LogToolStatistical* _instance = nil;
 
 +(instancetype) shareInstance {
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
-        _instance = [[LogStatistical alloc] init];
+        _instance = [[LogToolStatistical alloc] init];
         [_instance performSelector:@selector(createButton) withObject:nil afterDelay:0];
     }) ;
     
@@ -50,19 +47,19 @@ static LogStatistical* _instance = nil;
 - (void)createButton{
     _window = [UIApplication sharedApplication].keyWindow;
     _window.windowLevel = UIWindowLevelAlert;
-
+    
     if (_window == nil) {
         NSLog(@"请先再AppDelegate设置keyWindow");
     }
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
     [_button setTitle:@"按钮" forState:UIControlStateNormal];
-    _button.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 70, [UIScreen mainScreen].bounds.size.height - 150, 60, 60);
+    _button.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 60, [UIScreen mainScreen].bounds.size.height - 150, 45, 45);
     _button.titleLabel.font = [UIFont systemFontOfSize:13.0f];
-    [_button setBackgroundColor:[UIColor orangeColor]];
-    _button.layer.cornerRadius = 30;
+    [_button setBackgroundColor:LogTool_Color_Tin_COLOR];
+    _button.layer.cornerRadius = 22.5;
     _button.layer.masksToBounds = YES;
     _button.layer.borderWidth = 6;
-    _button.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    _button.layer.borderColor = LogTool_Color_Label_TITLECOLOR.CGColor;
     [_button addTarget:self action:@selector(resignButton) forControlEvents:UIControlEventTouchUpInside];
     [_window addSubview:_button];
     //放一个拖动手势，用来改变控件的位置
@@ -71,9 +68,7 @@ static LogStatistical* _instance = nil;
 }
 
 - (void)resignButton{
-    NSLog(@"点击按钮");
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LogStatistical" bundle:nil];
-    LogStatisticalTabBarViewController *tabbarVC = [sb instantiateViewControllerWithIdentifier:@"LogStatisticalTabBarViewControllerID"];
+    LogToolTabBarViewController *tabbarVC = [[LogToolTabBarViewController alloc]init];
     [self.currentViewController presentViewController:tabbarVC animated:YES completion:nil];
 }
 

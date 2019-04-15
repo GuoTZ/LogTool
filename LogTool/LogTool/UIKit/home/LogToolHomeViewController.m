@@ -7,12 +7,14 @@
 //
 
 #import "LogToolHomeViewController.h"
-#import "LogToolSearchViewController.h"
 #import "LogToolHeader.h"
-@interface LogToolHomeViewController ()<UISearchResultsUpdating>
-@property (nonatomic, strong) NSMutableArray *searchList;
-@property (nonatomic, strong) LogToolSearchViewController *displayController;
+#import "LogToolSQLiteManager.h"
+#import "LogToolDetailTableViewController.h"
+@interface LogToolHomeViewController ()<UISearchResultsUpdating,UISearchBarDelegate,UISearchControllerDelegate>
 @property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, assign) BOOL isSearch;
+@property (nonatomic, strong) NSMutableArray *seacrhArray;
+@property (nonatomic, assign) NSInteger seacrhIndex;
 @end
 
 @implementation LogToolHomeViewController
@@ -20,7 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 创建用于展示搜索结果的控制器
-    LogToolSearchViewController *result = [[LogToolSearchViewController alloc]init];
     // 创建搜索框
     UISearchController *search = [[UISearchController alloc]initWithSearchResultsController:nil];
     search = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -46,61 +47,168 @@
         }
     }
     search.searchBar.placeholder = @"请输入关键词";
-    search.dimsBackgroundDuringPresentation = NO;
+//    search.dimsBackgroundDuringPresentation = NO;
     self.definesPresentationContext = YES;  // know where you want UISearchController to be displayed
     self.tableView.tableHeaderView = search.searchBar;
-    search.searchResultsUpdater = result;
-    self.definesPresentationContext = YES;
+    search.searchResultsUpdater = self;
     //搜索时，背景变模糊
-    search.obscuresBackgroundDuringPresentation = YES;
+    search.obscuresBackgroundDuringPresentation = NO;
+    search.searchBar.delegate = self;
+    search.searchResultsUpdater = self;
+    search.delegate = self;
     self.searchController = search;
-    search.searchBar.placeholder = @"搜索";
-    _searchController.searchResultsUpdater= self;
+    
+
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     //产生100个“数字+三个随机字母”
-    for (NSInteger i=0; i<100; i++) {
-        [self.dataArray addObject:[NSString stringWithFormat:@"%ld",(long)i]];
+    self.pageIndex=1;
+    [self downLoadData];
+    self.seacrhIndex = 1;
+    self.seacrhArray = @[].mutableCopy;
+    if (self.type<0) {
+        [self configLeftBarButtonItem];
     }
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"toolLibs_icon_nav_close@2x"] style:(UIBarButtonItemStylePlain) target:self action:@selector(selectorDismiss)];
-}
-- (void)selectorDismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
-    NSLog(@"updateSearchResultsForSearchController");
-    NSString *searchString = [self.searchController.searchBar text];
-    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
-    if (self.searchList!= nil) {
-        [self.searchList removeAllObjects];
-    }
-    //过滤数据
-    self.searchList= [NSMutableArray arrayWithArray:[self.dataArray filteredArrayUsingPredicate:preicate]];
-    //刷新表格
-    [self.tableView reloadData];
+    [self configRightBarButtonItem];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.searchController.active) {
-        return [self.searchList count];
-    }else{
-        return [self.dataArray count];
-    }
+- (void)configRightBarButtonItem {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"toolLibs_icon_nav_detele@2x"] style:(UIBarButtonItemStylePlain) target:self action:@selector(selectorDetele)];
 }
-//返回单元格内容
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell=[self cellToTableView:tableView];
-    if (self.searchController.active) {
-        [cell.textLabel setText:self.searchList[indexPath.row]];
+- (void)selectorDetele {
+    NSString *msg = self.title;
+    if (self.type<0) {
+        msg = @"全部";
     }
-    else{
-        [cell.textLabel setText:self.dataArray[indexPath.row]];
+    UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"是否删除%@日志信息",msg] preferredStyle:(UIAlertControllerStyleAlert)];
+    [alter addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [alter addAction:[UIAlertAction actionWithTitle:@"确认" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [[LogToolSQLiteManager shareInstance] deleteType:self.type];
+            [self.dataArray removeAllObjects];
+            self.pageIndex=1;
+            //通知主线程刷新
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        });
+    }]];
+    [self presentViewController:alter animated:YES completion:nil];
+}
+
+- (void)downLoadData {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (LogToolMessageModel *model in [[LogToolSQLiteManager shareInstance]select:self.pageIndex type:self.type]) {
+            [self.dataArray addObject:model];
+        }
+        //通知主线程刷新
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
+}
+
+
+- (void)searchData {
+    NSString *st = self.searchController.searchBar.text;
+    if (st.length==0) {
+        return;
+    }
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (LogToolMessageModel *model in [[LogToolSQLiteManager shareInstance]select:self.pageIndex keyWord:st type:self.type]) {
+            [self.seacrhArray addObject:model];
+        }
+        //通知主线程刷新
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self cellToTableView:tableView];
+    if (self.isSearch) {
+        LogToolMessageModel *model =  [self.seacrhArray objectAtIndex:indexPath.row];
+        [self configCellModel:model cell:cell];
+    } else {
+        LogToolMessageModel *model =  [self.dataArray objectAtIndex:indexPath.row];
+        [self configCellModel:model cell:cell];
     }
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.isSearch) {
+        id model =  [self.seacrhArray objectAtIndex:indexPath.row];
+        if ([model isKindOfClass:[LogToolMessageModel class]]) {
+            LogToolDetailTableViewController *vc = [LogToolDetailTableViewController new];
+            vc.model = model;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    } else {
+        id model =  [self.dataArray objectAtIndex:indexPath.row];
+        if ([model isKindOfClass:[LogToolMessageModel class]]) {
+            LogToolDetailTableViewController *vc = [LogToolDetailTableViewController new];
+            vc.model = model;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
+}
 
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.isSearch) {
+        return [self.seacrhArray count];
+    } else {
+        return [self.dataArray count];
+    }
+}
+
+- (void)willPresentSearchController:(UISearchController *)searchController{
+    self.isSearch = YES;
+    self.seacrhIndex=1;
+    [self.seacrhArray removeAllObjects];
+    [self.tableView reloadData];
+}
+- (void)willDismissSearchController:(UISearchController *)searchController{
+    self.isSearch = NO;
+    [self.tableView reloadData];
+}
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self searchData];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    //第二组可以左滑删除
+    return YES;
+}
+
+// 定义编辑样式
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+// 进入编辑模式，按下出现的编辑按钮后,进行删除操作
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        LogToolMessageModel *model = [self.dataArray objectAtIndex:indexPath.row];
+        if ([[LogToolSQLiteManager shareInstance]deleteId:model.Id]) {
+            [self.dataArray removeObject:model];
+            [self.tableView reloadData];
+        }
+        
+    }
+}
+
+// 修改编辑按钮文字
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
+}
 
 @end

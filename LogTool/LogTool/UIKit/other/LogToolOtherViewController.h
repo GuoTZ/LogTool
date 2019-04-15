@@ -1,8 +1,8 @@
 //
-//  LogToolSearchViewController.h
+//  LogToolOtherViewController.h
 //  LogTool
 //
-//  Created by DingYD on 2019/3/29.
+//  Created by DingYD on 2019/3/30.
 //  Copyright © 2019 DingYD. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LogToolSearchViewController : LogToolTableViewController<UISearchResultsUpdating>
+@interface LogToolOtherViewController : LogToolTableViewController
 
 @end
 

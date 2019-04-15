@@ -8,6 +8,8 @@
 
 #import "LogToolTableViewController.h"
 #import "LogToolHeader.h"
+#import "NSDate+LogTool.h"
+#import "LogToolDetailTableViewController.h"
 @interface LogToolTableViewController ()
 
 @end
@@ -18,7 +20,7 @@
     [super viewDidLoad];
     self.tableView.separatorInset = UIEdgeInsetsZero;
     self.tableView.backgroundColor = LogTool_Color_ViewBackgroundColor_COLOR;
-    self.tableView.separatorColor = LogTool_Color_FFFFFF_COLOR;
+    self.tableView.separatorColor = LogTool_Color_Tin_COLOR;
     self.tableView.tableFooterView = [UIView new];
 }
 - (NSMutableArray *)dataArray {
@@ -40,7 +42,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self cellToTableView:tableView];
-    [cell.textLabel setText:self.dataArray[indexPath.row]];
+    [self configCellModel:self.dataArray[indexPath.row] cell:cell];
     return cell;
 }
 
@@ -48,21 +50,60 @@
     static NSString * cellID=@"cellID";
     UITableViewCell * cell=[tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell==nil) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
         cell.backgroundColor = LogTool_Color_ViewBackgroundColor_COLOR;
         cell.textLabel.numberOfLines = 0;
         cell.detailTextLabel.numberOfLines=0;
-        [cell.textLabel setFont:[UIFont systemFontOfSize:15]];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:13]];
         [cell.detailTextLabel setFont:[UIFont systemFontOfSize:13]];
-        cell.textLabel.textColor = LogTool_Color_FFFFFF_COLOR;
         cell.detailTextLabel.textColor = LogTool_Color_Tin_COLOR;
+        cell.textLabel.textColor = LogTool_Color_Tin_COLOR;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.contentView.tintColor = LogTool_Color_Tin_COLOR;
     }
-    
     return cell;
 }
 
+
+- (void)configCellModel:(LogToolMessageModel *)model cell:(UITableViewCell *)cell{
+    [cell.detailTextLabel setText:model.formatStrStr];
+    NSString *descriptin = @"";
+    switch (model.type) {// 0 HTTP 1 Info 2Other 3Warning 4Error
+        case 0:
+            descriptin = @"  HTTP  ";
+            break;
+        case 1:
+            descriptin = @"  Info  ";
+            break;
+        case 2:
+            descriptin = @"  Other  ";
+            break;
+        case 3:
+            descriptin = @"  Warning  ";
+            break;
+        case 4:
+            descriptin = @"  Error  ";
+            break;
+        default:
+            break;
+    }
+    [cell.textLabel setText:[NSString stringWithFormat:@"这是一个%@类型的数据\n打印时间:%@\n文件名:%@\n方法名:%@\n方法所在的行数:%d",descriptin,[model.dataStr string_logtool],model.fileStr,model.menthodStr,model.line]];
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController pushViewController:[UIViewController new] animated:YES];
+    id model =  [self.dataArray objectAtIndex:indexPath.row];
+    if ([model isKindOfClass:[LogToolMessageModel class]]) {
+        LogToolDetailTableViewController *vc = [LogToolDetailTableViewController new];
+        vc.model = model;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+- (void)configLeftBarButtonItem {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"toolLibs_icon_nav_close@2x"] style:(UIBarButtonItemStylePlain) target:self action:@selector(selectorDismiss)];
+}
+- (void)selectorDismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LogStatisticalTabBarViewController.h"
 #import "LogToolTabBarViewController.h"
+#import "LogTool/LogToolHeader.h"
 @interface ViewController ()
 
 @end
@@ -22,6 +23,9 @@
 }
 
 - (IBAction)newBtnAction:(id)sender {
+    
+    
+    
     [self presentViewController:[LogToolTabBarViewController new] animated:YES completion:nil];
 }
 - (IBAction)oldBtnAction:(id)sender {
@@ -32,8 +36,9 @@
 
 
 
-
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self performSelector:@selector(selector) withObject:self];
+}
 
 
 

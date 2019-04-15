@@ -11,8 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LogToolMessageModel : NSObject
+@property (nonatomic,assign) NSInteger Id;
+
+/**
+  0 HTTP 1 Info 2Other 3Warning 4Error
+ */
 @property (nonatomic,assign) int type;
-@property (nonatomic,copy  ) NSString *dataStr;
+@property (nonatomic,strong) NSDate *dataStr;
 @property (nonatomic,copy  ) NSString *fileStr;
 @property (nonatomic,assign) int line;
 @property (nonatomic,copy  ) NSString *menthodStr;
